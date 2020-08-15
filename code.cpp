@@ -1,11 +1,12 @@
-#include<iostream.h>
-#include<stdio.h>
+#include<iostream>
 #include<conio.h>
-#include<process.h>
+#include<fstream>
 #include<string.h>
-#include<fstream.h>
-#include<iomanip.h>
-#include<ctype.h>
+#include<stdio.h>
+#include<process.h>
+#include<iomanip>
+#define CLRSCR system("cls");
+using namespace std;
 
 class cars
 {
