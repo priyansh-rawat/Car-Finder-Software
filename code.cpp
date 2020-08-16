@@ -72,7 +72,7 @@ cars carsel()
  	}
  	return ret;
 }
-void main()
+int main()
 {
 	CLRSCR;
    	char pass[10],buf,ans;
@@ -115,6 +115,7 @@ void main()
  	for(int i=0;i<12;i++)
 	 	cout<<"\n";
  	cout<<"---------------------------Thank You!! Please Vist Again----------------------";
+ 	return 0;
  	getch();
 }
 
@@ -225,7 +226,7 @@ cars showcar()
  	switch (choice)
  	{
   	case 1:	strcpy(stype,"Hatchback");
-   		   	strcpy(out,"s”);
+   		   	strcpy(out,"s");
    	   		min=2.86;
    	   		break;
   	case 2: strcpy(stype,"Sedan");
@@ -452,7 +453,7 @@ void cars :: output()
  	cout<<endl<<"|"<<setw(20)<<"Name  |"<<setw(30)<<name<<"  |";
  	cout<<endl<<"|"<<setw(20)<<"Type  |" <<setw(30)<<type<<"  |";
  	cout<<endl<<"|"<<setw(20)<<"Price  |"<<setw(24)<<setprecision(2)<<price<<" Lakhs"<<"  |"<<endl;
- 	for(i=0;i<54;i++)
+ 	for(int i=0;i<54;i++)
 	 	cout<<"-";
  	cout<<endl<<"|"<<setw(20)<<"Engine  |"<<setw(30)<<eng<<"  |";
 	cout<<endl<<"|"<<setw(20)<<"Transmission  |"<<setw(30)<<transmission<<"  |";
@@ -460,14 +461,14 @@ void cars :: output()
 	cout<<endl<<"|"<<setw(20)<<"Fuel  |"<<setw(30)<<fuel<<"  |";
 	cout<<endl<<"|"<<setw(20)<<"Power  |"<<setw(26)<<hp<<" BHP"<<"  |";
 	cout<<endl<<"|"<<setw(20)<<setprecision(2)<<"Mileage  |"<<setw(25)<<setprecision(2)<<mileage<<" KMPL"<<"  |"<<endl;
-	for(i=0;i<54;i++) 
+	for(int i=0;i<54;i++) 
 		cout<<"-";
 	cout<<endl<<"|"<<setw(20)<<"No of Seats  |"<<setw(30)<<seats<<"  |";
 	cout<<endl<<"|"<<setw(20)<<"Boot Space  |"<<setw(28)<<btspc<<" L"<<"  |";
 	cout<<endl<<"|"<<setw(20)<<"ABS  |"<<setw(30)<<abs1<<"  |";
 	cout<<endl<<"|"<<setw(20)<<"Airbags  |"<<setw(30)<<airbags<<"  |";
 	cout<<endl<<"|"<<setw(20)<<"Rating  |"<<setw(30)<<rating<<"  |"<<endl;
-	for(i=0;i<54;i++)
+	for(int i=0;i<54;i++)
 		cout<<"=";
 }
 
