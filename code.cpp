@@ -77,7 +77,7 @@ int main()
 	CLRSCR;
    	char pass[10],buf,ans;
  	cout<<"Type password to edit or press ENTER";
-	for(int s=0;s<11;s++)
+	for(int i=0;i<11;i++)
 		cout<<"\n";
  	cout<<setw(40)<<"Password:";
 	cin.getline(pass,10);
@@ -475,13 +475,20 @@ void cars :: output()
 void edit()
 {
  	CLRSCR;
+ 	cout<<"WELCOME ADMIN";
  	char cd,cont='y';
 	cars c1;
- 	while(cont=='y'||cont=='Y')
+ 	while(cont=='y')
  	{
-  		cout<<"Do you want to enter or delete (e/d)?:";
+ 		cout<<"\n\nDo you want to ENTER/DELETE/LOGOUT (e/d/l)?:";
   		cin>>cd;
-  		if(cd=='e'||cd=='E')
+  		if(cd=='l'||cd=='L')
+  		{
+  			cout<<"\n\n\n\nSuccessfully logged out.";
+  			getch();
+  			break;
+		}
+  		else if(cd=='e'||cd=='E')
   		{
    			char ans='y';
    			ofstream fout("Cars.dat",ios::app|ios::binary);
@@ -492,7 +499,7 @@ void edit()
 				fout.write((char*)&c1,sizeof(c1));
 				CLRSCR;
 				c1.output();
-				cout<<"\nDo you want to enter more cars(y/n)?:";
+				cout<<"\nEnter 'y/Y' to continue entering new data: ";
 				cin>>ans;
 			}
   		}
@@ -502,7 +509,8 @@ void edit()
    			char ans='y';
    			while(ans=='Y'||ans=='y')
    			{
-				cout<<"Enter the code of car you want to delete:";
+   				CLRSCR;
+				cout<<"\nEnter the code of car you want to delete: ";
 				cin>>del;
 				ifstream fin("Cars.dat",ios::binary);
 				ofstream fout("Temp.dat",ios::app|ios::binary);
@@ -511,7 +519,7 @@ void edit()
 			 		if(del==c1.getcode())
 			 		{
 			  			c1.output();
-			  			cout<<"\nDelete(y/n)?:";
+			  			cout<<"\nDelete(y/n)?: ";
 			  			char confirm;
 					  	cin>>confirm;
 					  	if(confirm=='n')
@@ -524,13 +532,14 @@ void edit()
 				fin.close();
 				remove("Cars.dat");
 				rename("temp.dat","Cars.dat");
-				cout<<"\nDo you want to delete more(y/n):";
+				cout<<"\nEnter 'y/Y' to continue deleting data: ";
 				cin>>ans;
    			}
   		}
   		else
-   			exit(0);
-  		cout<<"\nDo you want to continue editing(y/n)?:";cin>>cont;
+  			cout<<"\nINVALID OPTION.\n\n";	
  	}
 }
 
+
+//75
