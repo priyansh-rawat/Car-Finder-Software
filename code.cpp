@@ -10,9 +10,9 @@ using namespace std;
 
 class cars
 {
-	int abs, airbags,seats,code;
-  	float hp,btspc,price,mileage,rating;
-  	char eng[30],fuel[20],transmission[30],drvtrain[5];
+	int hp,btspc,abs, airbags,seats,code;
+  	float price,mileage,rating;
+  	char eng[30],fuel[20],transmission[30],drvtrain[4];
   	char company[15], name[20],type[20];
  	public:
   		void input();
@@ -156,7 +156,7 @@ cars showcomp(char comp1[])
  	cout<<"\nThe cars from "<<comp1<<" are:"<<endl;
  	for(i=0;i<56;i++)
 	 	cout<<"=";
- 		cout<<endl<<"|"<<setw(13)<<"Code	|"<<setw(18)<<"Name  	|"<<setw(24)<<"Price    	|"<<endl;
+ 		cout<<endl<<"|"<<setw(13)<<"Code   |"<<setw(18)<<"Name   |"<<setw(24)<<"Price   |"<<endl;
  	for(i=0;i<56;i++)
 	 	cout<<"=";
  	for(i=0;i<j;i++)
@@ -220,36 +220,32 @@ cars showcar()
  	CLRSCR;
  	notfnd:		CLRSCR;
  	cout<<"Enter which type of car you want from the following list:";
- 	cout<<"\n1)Hatchback\n2)Sedan\n3)Luxury Sedan\n4)SUV\n5)MPV\n6)Sports\n";
+ 	cout<<"\n1)Hatchback\n2)Sedan\n3)Compact Sedan\n4)SUV\n5)Luxury\n";
  	cout<<"Enter choice:";
  	cin>>choice;
  	switch (choice)
  	{
   	case 1:	strcpy(stype,"Hatchback");
    		   	strcpy(out,"s");
-   	   		min=2.86;
+   	   		min=4.00;
    	   		break;
   	case 2: strcpy(stype,"Sedan");
    	   		strcpy(out,"s");
-   	   		min=7.37;
+   	   		min=10.00;
    	   		break;
-  	case 3:	strcpy(stype,"Luxury Sedan");
+  	case 3:	strcpy(stype,"Compact Sedan");
    	   		strcpy(out,"s");
-   	   		min=52.81;
+   	   		min=8.6;
    	   		break;
   	case 4: strcpy(stype,"SUV");
    	   		strcpy(out,"s");
-   	   		min=8.54;
+   	   		min=11.00;
    	   		break;
-  	case 5:	strcpy(stype,"MPV");
+  	case 5:	strcpy(stype,"Luxury");
 		   	strcpy(out,"s");
-		   	min=5.82;
+		   	min=38.00;
 		   	break;
-	case 6: strcpy(stype,"Sports");
-   	   		strcpy(out," cars");
-   	   		min=85.45;
-   	   		break;
-  	default:cout<<"\nInvalid choice!! Do you want to try again(y/n):";
+	default:cout<<"\nInvalid choice!! Do you want to try again(y/n):";
    	   		cin>>again;
    	   		if (again=='y'||again=='Y')
    			goto notfnd;
@@ -298,7 +294,7 @@ cars showcar()
  	cout<<stype<<out<<" under "<<budget<<" Lakhs are:"<<endl;
  	for(j=0;j<74;j++)	
 	 	cout<<"=";
- 	cout<<endl<<"|"<<setw(13)<<"Code	|"<<setw(18)<<"Company 	|"<<setw(18)<<"Name  	|"<<setw(24)<<"Price   	|"<<endl;
+ 	cout<<endl<<"|"<<setw(13)<<"Code   |"<<setw(18)<<"Company   |"<<setw(18)<<"Name   |"<<setw(24)<<"Price   |"<<endl;
  	for(j=0;j<74;j++)
 	 	cout<<"=";
  	for(j=0;j<count;j++)
@@ -542,4 +538,4 @@ void edit()
 }
 
 
-//75
+
